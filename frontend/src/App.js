@@ -5,29 +5,23 @@ const App = () => {
     const [message, setMessage] = useState("");
 
     const getGreeting = async () => {
-        if (!name) {
-            alert("Name is required !");
+        if (!name.trim()) {
+            setMessage("Error: Name is required.");
             return;
         }
 
         try {
-            // const response = await fetch(`http://localhost:5000/api/greet?name=${name}`);
-            const response = await fetch("/api/greet?name=" + name);
-
-            if (!response.ok) {
-                throw new Error("Failed to fetch");
-            }
+            const response = await fetch(`/api/greet?name=${name}`);
             const data = await response.json();
             setMessage(data.message || data.error);
         } catch (error) {
-            console.error("Error fetching greeting:", error);
-            setMessage("Failed to fetch. Make sure the backend is running.");
+            setMessage("Failed to fetch. Please try again.");
         }
     };
 
     return (
         <div style={styles.container}>
-            <h1 style={styles.heading}><i>_YoungsLab_</i></h1>
+            <h1 style={styles.heading}>Welcome to Younglabs</h1>
             <input
                 type="text"
                 placeholder="Enter your name"
@@ -42,7 +36,6 @@ const App = () => {
         </div>
     );
 };
-
 
 const styles = {
     container: {
