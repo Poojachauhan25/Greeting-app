@@ -12,7 +12,7 @@ app.get("/api/greet", (req, res) => {
     res.json({ message: `Hello, ${name}! Welcome to Younglabs.` });
 });
 
-const PORT = 5001;
+const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
