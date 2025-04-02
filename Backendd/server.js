@@ -3,10 +3,6 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-// app.use(cors({
-//     origin: 'http://localhost:3000', // Allow only React frontend to make requests
-// }));
-
 
 app.get("/api/greet", (req, res) => {
     const name = req.query.name;
