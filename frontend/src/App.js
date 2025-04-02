@@ -17,7 +17,7 @@ function App() {
 
     return (
         <div style={styles.container}>
-            <h2 style={styles.heading}><i>_Younglabs_</i></h2>
+            <h2 style={styles.heading}><i>Get Greetings!</i></h2>
             <input 
                 type="text" 
                 placeholder="Enter your name..." 
